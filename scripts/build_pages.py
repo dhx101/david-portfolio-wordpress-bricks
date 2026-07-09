@@ -124,9 +124,6 @@ PAGE_STYLE = """
 .study-card-body,.job-card-body{display:flex;flex-direction:column;gap:12px}
 .study-card-desc,.job-card-desc{display:flex;flex-direction:column;gap:12px}
 .job-card-funciones{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
-.dhx-logo-angulotres{display:flex;flex-direction:column;align-items:center;gap:8px;color:#111;text-align:center}
-.dhx-logo-angulotres .name{font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:1.9em;letter-spacing:0.14em;text-transform:uppercase}
-.dhx-logo-angulotres .tagline{font-family:Georgia,'Times New Roman',serif;font-size:0.62em;letter-spacing:0.06em;color:#444}
 """
 
 os.makedirs(os.path.join(ROOT, "proyectos"), exist_ok=True)
@@ -222,7 +219,7 @@ angulotres = {
     "position": "Diseñador y Desarrollador Web",
     "company": "Ángulo Tres",
     "time": "2024 - Actualidad",
-    "img": None,
+    "img": "experiencia/AnguloTres.webp",
     "miniDescription": (
         "Agencia en la que trabajo actualmente. Mi puesto de contrato es Diseñador Web, pero en la práctica cubro "
         "todo el ciclo de vida de los proyectos digitales de la agencia: diseño, desarrollo con WordPress y Bricks "
@@ -246,11 +243,6 @@ for j in jobs:
     funciones = "".join(f'<p class="brxe-text-basic badge-infraestructure">{fn}</p>' for fn in j.get("funciones", []))
     if j.get("img"):
         img_html = f'<div class="job-card-image"><img src="/assets/{j["img"]}" alt="{j["company"]}" loading="lazy"></div>'
-    elif j.get("company") == "Ángulo Tres":
-        img_html = ('<div class="job-card-image"><div class="dhx-logo-angulotres">'
-                     '<span class="name">Ángulo Tres</span>'
-                     '<span class="tagline">agencia de MARKETING Y COMUNICACIÓN</span>'
-                     '</div></div>')
     else:
         img_html = '<div class="job-card-image placeholder"><p class="brxe-text-basic label" style="text-align:center">Trabajo actual<br>bajo NDA</p></div>'
     if j.get("link"):
