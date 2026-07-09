@@ -107,7 +107,7 @@
     }
 
     // 6. Header + hero entrance on load
-    gsap.from("#brx-header", { opacity: 0, y: -24, duration: 0.7, ease: "power2.out" });
+    gsap.from("#brx-header", { opacity: 0, y: -24, duration: 0.7, ease: "power2.out", clearProps: "transform" });
 
     // 7. Section labels ("00 // USER_PROFILE" etc.) - letter-by-letter typing feel
     document.querySelectorAll(".label.text-blue.brxe-text-basic:not(.label-holo)").forEach(function (label) {
