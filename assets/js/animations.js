@@ -23,9 +23,18 @@
     });
   }
 
+  // Card contents (headings, labels, paragraphs inside a project/study/job
+  // "terminal" card) shouldn't get their own word-by-word reveal — they just
+  // ride along with the card's single fade-up (see grid reveal below) instead
+  // of animating separately on top of it.
+  function isInsideCard(el) {
+    return !!el.closest(".terminal");
+  }
+
   document.fonts.ready.then(function () {
-    // 1. Split-text word reveal for every heading
+    // 1. Split-text word reveal for every heading (outside cards)
     document.querySelectorAll("h1.brxe-heading, h2.brxe-heading, h3.brxe-heading").forEach(function (heading) {
+      if (isInsideCard(heading)) return;
       var split = new SplitText(heading, { type: "words", wordsClass: "word" });
       maskReveal(split.words, "inline-block");
       gsap.set(split.words, { yPercent: 110 });
@@ -51,6 +60,7 @@
     // scrolls. A start point this close to "as soon as it's barely visible" is
     // always reachable.
     document.querySelectorAll(".label-holo.brxe-text-basic, p.brxe-text-basic.label").forEach(function (p) {
+      if (isInsideCard(p)) return;
       var split = new SplitText(p, { type: "lines", linesClass: "line" });
       maskReveal(split.lines, "block");
       gsap.set(split.lines, { yPercent: 100 });
@@ -73,6 +83,8 @@
       ".brx-grid",
       ".proyectos-grid",
       ".estudios-list",
+      ".experiencia-list",
+      ".home-preview-list",
       ".infraestructure-content",
       "#brxe-vzdezc",
       "#brxe-qyctxd"
@@ -135,6 +147,7 @@
 
     // 7. Section labels ("00 // USER_PROFILE" etc.) - word-by-word reveal from behind a mask
     document.querySelectorAll(".label.text-blue.brxe-text-basic:not(.label-holo)").forEach(function (label) {
+      if (isInsideCard(label)) return;
       var split = new SplitText(label, { type: "words", wordsClass: "word" });
       maskReveal(split.words, "inline-block");
       gsap.set(split.words, { yPercent: 100 });
