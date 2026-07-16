@@ -130,9 +130,10 @@ os.makedirs(os.path.join(ROOT, "proyectos"), exist_ok=True)
 os.makedirs(os.path.join(ROOT, "estudios"), exist_ok=True)
 os.makedirs(os.path.join(ROOT, "experiencia"), exist_ok=True)
 
+DATA = os.path.join(ROOT, "assets", "data")
+
 # ---------------------------------------------------------------- PROYECTOS
-with open(os.path.join(ROOT, "..", "nextjs-portfolio", "public", "jsons", "projects.json")
-          if False else "/workspace/nextjs-portfolio/public/jsons/projects.json", encoding="utf-8") as f:
+with open(os.path.join(DATA, "projects.json"), encoding="utf-8") as f:
     projects = json.load(f)
 
 cards = []
@@ -174,7 +175,7 @@ with open(os.path.join(ROOT, "proyectos", "index.html"), "w", encoding="utf-8") 
     ))
 
 # ----------------------------------------------------------------- ESTUDIOS
-with open("/workspace/nextjs-portfolio/public/jsons/studies.json", encoding="utf-8") as f:
+with open(os.path.join(DATA, "studies.json"), encoding="utf-8") as f:
     studies = json.load(f)
 
 study_cards = []
@@ -212,7 +213,7 @@ with open(os.path.join(ROOT, "estudios", "index.html"), "w", encoding="utf-8") a
     ))
 
 # -------------------------------------------------------------- EXPERIENCIA
-with open("/workspace/nextjs-portfolio/public/jsons/workplace.json", encoding="utf-8") as f:
+with open(os.path.join(DATA, "workplace.json"), encoding="utf-8") as f:
     workplace = json.load(f)
 
 angulotres = {

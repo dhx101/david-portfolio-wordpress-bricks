@@ -1,0 +1,33 @@
+[
+  {
+    "position": "Técnico web",
+    "company": "Almoraima Soluciones",
+    "time": null,
+    "img": "experiencia/Almoraima.png",
+    "miniDescription": "Agencia de Marketing digital donde trabajo media jornada, soy el encargado del departameto de Desarrollo Web, creaba páginas webs desde cero, diseñando las webs, conectando el dominio a los hostings y maquetando las diferentes web utilizando Wordpress y llevo el SEO de las diferentes webs trabajando el SEO on Page y el SEO off Page.",
+    "funciones": [
+      "Desarrollo de páginas web con Wordpress",
+      "Mantenimiento de Páginas y servidores web",
+      "Conexión de Hosting con Dominios mediante NS",
+      "Instalación de CMS y Plugins asociados",
+      "Diseño y maquetación de páginas web",
+      "SEO on Page y SEO off Page"
+    ],
+    "link": "https://www.almoraimasoluciones.es/"
+  },
+  {
+    "position": "Becario Desarrollador Web",
+    "company": "La Buhardilla del Marketing",
+    "time": null,
+    "img": "experiencia/Buhardilla.png",
+    "miniDescription": "Agencia de Marketing Digital donde hice mis prácticas con la universidad, aprendí mucho de todo el ambito del Marketing, me encargaba de maquetar las diferentes páginas webs que diseñaba la diseñadora de la empresa, a su vez trabajaba el SEO de los diferentes clientes que teniamos tanto el SEO on Page como el SEO off Page y por ultimo llevaba las redes sociales de diferentes empresas.",
+    "funciones": [
+      "Desarrollo de páginas web con Wordpress",
+      "Mantenimiento de Páginas y servidores web",
+      "Diseño y maquetación de páginas web",
+      "Diseño para Redes sociales",
+      "SEO on Page y SEO off Page"
+    ],
+    "link": "https://labuhardilladelmarketing.com/"
+  }
+]
