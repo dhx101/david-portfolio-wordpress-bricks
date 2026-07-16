@@ -36,13 +36,20 @@
         stagger: 0.045,
         scrollTrigger: {
           trigger: heading,
-          start: "top 88%",
-          toggleActions: "play none none none"
+          start: "top 92%",
+          once: true,
+          fastScrollEnd: true
         }
       });
     });
 
     // 2. Split-text line reveal for the intro/label paragraphs (rise from behind a mask, line by line)
+    // "top 97%" (rather than a lower %) is intentional: an element sitting very
+    // close to the bottom of the page (e.g. the footer copyright line) may run out
+    // of scroll room before its top ever reaches a stricter percentage down the
+    // viewport, and its reveal would then never fire no matter how far the user
+    // scrolls. A start point this close to "as soon as it's barely visible" is
+    // always reachable.
     document.querySelectorAll(".label-holo.brxe-text-basic, p.brxe-text-basic.label").forEach(function (p) {
       var split = new SplitText(p, { type: "lines", linesClass: "line" });
       maskReveal(split.lines, "block");
@@ -54,8 +61,9 @@
         stagger: 0.08,
         scrollTrigger: {
           trigger: p,
-          start: "top 90%",
-          toggleActions: "play none none none"
+          start: "top 97%",
+          once: true,
+          fastScrollEnd: true
         }
       });
     });
@@ -81,8 +89,9 @@
         stagger: 0.09,
         scrollTrigger: {
           trigger: grid,
-          start: "top 85%",
-          toggleActions: "play none none none"
+          start: "top 92%",
+          once: true,
+          fastScrollEnd: true
         }
       });
     });
@@ -99,8 +108,9 @@
           ease: "power2.out",
           scrollTrigger: {
             trigger: img,
-            start: "top 88%",
-            toggleActions: "play none none none"
+            start: "top 92%",
+            once: true,
+            fastScrollEnd: true
           }
         }
       );
@@ -135,8 +145,9 @@
         ease: "power2.out",
         scrollTrigger: {
           trigger: label,
-          start: "top 92%",
-          toggleActions: "play none none none"
+          start: "top 96%",
+          once: true,
+          fastScrollEnd: true
         }
       });
     });
