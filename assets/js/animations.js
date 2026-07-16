@@ -8,15 +8,29 @@
 
   gsap.registerPlugin(ScrollTrigger, SplitText);
 
+  // Wraps each split unit (word or line) in its own overflow-hidden box, so
+  // animating the unit's yPercent makes it rise up from behind a mask
+  // instead of just fading in on top of whatever's below it.
+  function maskReveal(elements, display) {
+    elements.forEach(function (el) {
+      var mask = document.createElement("span");
+      mask.className = "reveal-mask";
+      mask.style.display = display;
+      mask.style.overflow = "hidden";
+      mask.style.verticalAlign = "top";
+      el.parentNode.insertBefore(mask, el);
+      mask.appendChild(el);
+    });
+  }
+
   document.fonts.ready.then(function () {
     // 1. Split-text word reveal for every heading
     document.querySelectorAll("h1.brxe-heading, h2.brxe-heading, h3.brxe-heading").forEach(function (heading) {
       var split = new SplitText(heading, { type: "words", wordsClass: "word" });
-      gsap.set(split.words, { opacity: 0, yPercent: 110, rotateZ: 4 });
+      maskReveal(split.words, "inline-block");
+      gsap.set(split.words, { yPercent: 110 });
       gsap.to(split.words, {
-        opacity: 1,
         yPercent: 0,
-        rotateZ: 0,
         duration: 0.7,
         ease: "power3.out",
         stagger: 0.045,
@@ -28,13 +42,13 @@
       });
     });
 
-    // 2. Split-text line reveal for the intro/label paragraphs (fade + slide, line by line)
+    // 2. Split-text line reveal for the intro/label paragraphs (rise from behind a mask, line by line)
     document.querySelectorAll(".label-holo.brxe-text-basic, p.brxe-text-basic.label").forEach(function (p) {
       var split = new SplitText(p, { type: "lines", linesClass: "line" });
-      gsap.set(split.lines, { opacity: 0, y: 16 });
+      maskReveal(split.lines, "block");
+      gsap.set(split.lines, { yPercent: 100 });
       gsap.to(split.lines, {
-        opacity: 1,
-        y: 0,
+        yPercent: 0,
         duration: 0.6,
         ease: "power2.out",
         stagger: 0.08,
@@ -109,15 +123,16 @@
     // 6. Header + hero entrance on load
     gsap.from("#brx-header", { opacity: 0, y: -24, duration: 0.7, ease: "power2.out", clearProps: "transform" });
 
-    // 7. Section labels ("00 // USER_PROFILE" etc.) - word-by-word typing feel
+    // 7. Section labels ("00 // USER_PROFILE" etc.) - word-by-word reveal from behind a mask
     document.querySelectorAll(".label.text-blue.brxe-text-basic:not(.label-holo)").forEach(function (label) {
       var split = new SplitText(label, { type: "words", wordsClass: "word" });
-      gsap.set(split.words, { opacity: 0 });
+      maskReveal(split.words, "inline-block");
+      gsap.set(split.words, { yPercent: 100 });
       gsap.to(split.words, {
-        opacity: 1,
-        duration: 0.05,
+        yPercent: 0,
+        duration: 0.4,
         stagger: 0.05,
-        ease: "none",
+        ease: "power2.out",
         scrollTrigger: {
           trigger: label,
           start: "top 92%",
