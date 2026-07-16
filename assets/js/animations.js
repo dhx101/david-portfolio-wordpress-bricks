@@ -46,7 +46,7 @@
         scrollTrigger: {
           trigger: heading,
           start: "top 92%",
-          once: true,
+          toggleActions: "play none none none",
           fastScrollEnd: true
         }
       });
@@ -72,7 +72,7 @@
         scrollTrigger: {
           trigger: p,
           start: "top 97%",
-          once: true,
+          toggleActions: "play none none none",
           fastScrollEnd: true
         }
       });
@@ -102,7 +102,7 @@
         scrollTrigger: {
           trigger: grid,
           start: "top 92%",
-          once: true,
+          toggleActions: "play none none none",
           fastScrollEnd: true
         }
       });
@@ -121,7 +121,7 @@
           scrollTrigger: {
             trigger: img,
             start: "top 92%",
-            once: true,
+            toggleActions: "play none none none",
             fastScrollEnd: true
           }
         }
@@ -159,12 +159,40 @@
         scrollTrigger: {
           trigger: label,
           start: "top 96%",
-          once: true,
+          toggleActions: "play none none none",
           fastScrollEnd: true
         }
       });
     });
 
     ScrollTrigger.refresh();
+
+    // Safety net: under real-world load (slow web-font swap, an impatient
+    // scroller racing the setup script), a reveal's target can end up out of
+    // sync with what GSAP's own tween thinks it already animated — the tween
+    // reports itself complete while the element on screen still shows its
+    // pre-reveal offset, and re-driving that same tween (progress(), gsap.set
+    // with the same cached value, etc.) is a no-op because GSAP skips writes
+    // it believes are redundant. So instead of trusting GSAP's bookkeeping,
+    // directly clear the raw CSS on any split word/line that's already been
+    // scrolled well into view but still visually hasn't revealed itself.
+    function sweepStuckReveals() {
+      document.querySelectorAll(".word, .line").forEach(function (el) {
+        var rect = el.getBoundingClientRect();
+        if (rect.top > window.innerHeight) return; // still below the fold — correctly not revealed yet
+        var transform = getComputedStyle(el).transform;
+        if (transform && transform !== "none" && transform !== "matrix(1, 0, 0, 1, 0, 0)") {
+          el.style.transform = "none";
+          el.style.translate = "none";
+          el.style.opacity = "1";
+        }
+      });
+    }
+    sweepStuckReveals();
+    var sweepTimer;
+    window.addEventListener("scroll", function () {
+      clearTimeout(sweepTimer);
+      sweepTimer = setTimeout(sweepStuckReveals, 150);
+    }, { passive: true });
   });
 })();
