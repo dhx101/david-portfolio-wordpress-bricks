@@ -1,0 +1,46 @@
+[
+  {
+    "degree": "Bootcamp Desarrollo Web Full Stack",
+    "time": "2023 - 2024",
+    "institution": "Upgrade Hub",
+    "img": "studies/Upgrade.webp",
+    "description": [
+      "Este Bootcamp de Desarrollo Web Full Stack en Upgrade Hub me permitió adquirir un conocimiento sólido y práctico de una amplia gama de tecnologías y herramientas utilizadas en el desarrollo web. A nivel de Front-End, me especialicé en el uso de HTML, CSS y JavaScript, trabajando con frameworks como React y Angular para crear interfaces de usuario dinámicas y eficientes. En cuanto al Back-End, aprendí a gestionar servidores y bases de datos, utilizando tecnologías como Node.js, MySQL y MongoDB, además de trabajar con lenguajes como PHP para desarrollar aplicaciones robustas.",
+      "Durante el curso, realicé varios proyectos grupales que me brindaron la oportunidad de aplicar lo aprendido en entornos colaborativos. Estos trabajos en equipo no solo me ayudaron a perfeccionar mis habilidades técnicas, sino también a entender la importancia de la comunicación y la coordinación en equipos multidisciplinarios. Al colaborar con mis compañeros, aprendí a aprovechar los puntos fuertes de cada miembro para lograr resultados más efectivos y desarrollar soluciones eficientes a problemas complejos.",
+      "Gracias a esta formación intensiva, ahora me siento preparado para enfrentar los desafíos del desarrollo web moderno, tanto en Front-End como en Back-End, y estoy entusiasmado por seguir creciendo como desarrollador en futuros proyectos."
+    ]
+  },
+  {
+    "degree": "Curso Diseño UX",
+    "time": "2023 - 2023",
+    "institution": "CENEC Málaga",
+    "img": "studies/CENEC.webp",
+    "description": [
+      "Este curso de Diseño UX en CENEC Málaga me proporcionó un conocimiento profundo y práctico de los principios clave del diseño centrado en el usuario. A lo largo del programa, aprendí a diseñar experiencias de usuario intuitivas y atractivas, con un enfoque en la investigación de usuarios, la creación de wireframes, prototipos interactivos y la realización de pruebas de usabilidad.",
+      "Durante el curso, participé en varios proyectos colaborativos que me permitieron aplicar los conceptos de UX en entornos de trabajo reales. En estos proyectos, perfeccioné mis habilidades para realizar entrevistas con usuarios, definir user personas y crear flujos de interacción eficientes. Además, el trabajo en equipo me ayudó a comprender la importancia de la retroalimentación continua y la colaboración efectiva con otros diseñadores y desarrolladores para lograr un diseño centrado en el usuario.",
+      "Gracias a esta formación intensiva en CENEC Málaga, ahora estoy preparado para enfrentar los desafíos del diseño UX. Estoy motivado para seguir creciendo en este campo, creando productos digitales que no solo sean visualmente atractivos, sino también altamente funcionales y accesibles para los usuarios."
+    ]
+  },
+  {
+    "degree": "Licenciatura em Comunicação Empresarial - Erasmus+",
+    "time": "2021 - 2022",
+    "institution": "Instituto Superior de Contabilidade e Administração do Porto (ISCAP)",
+    "img": "studies/ISCAP.jpg",
+    "description": [
+      "Durante mi experiencia Erasmus+ en el Instituto Superior de Contabilidade e Administração do Porto (ISCAP), cursé un doble grado en Marketing e Investigación de Mercados y Comunicação Empresarial. Este año en Portugal fue clave para mi desarrollo académico y personal, ya que no solo consolidé mis conocimientos en áreas fundamentales de la comunicación empresarial y el marketing, sino que también mejoré significativamente mi dominio del inglés y adquirí un nivel básico de portugués.",
+      "A lo largo de mi estancia, trabajé en numerosos proyectos colaborativos que fortalecieron mis capacidades de trabajo en equipo y liderazgo. En algunos casos, lideré grupos en actividades académicas, gestionando tanto la organización como la ejecución de tareas, lo que me permitió afinar mi habilidad para coordinar equipos multiculturales y adaptarme a diferentes estilos de trabajo.",
+      "Además de las clases, participé en diversas actividades extracurriculares, incluyendo un voluntariado con animales. Esta experiencia me ayudó a desarrollar una mayor sensibilidad hacia la colaboración en entornos diversos, y sin duda será un activo valioso en mi futuro profesional, especialmente al trabajar en equipos internacionales."
+    ]
+  },
+  {
+    "degree": "Grado Marketing e Investigación de Mercados",
+    "time": "2018 - 2023",
+    "institution": "Universidad de Málaga",
+    "img": "studies/UMA.webp",
+    "description": [
+      "Durante mi Grado en Marketing e Investigación de Mercados en la Universidad de Málaga, adquirí una formación integral en diversas áreas del marketing, con un enfoque especial en el Marketing Digital. A lo largo de estos años, profundicé en el estudio de estrategias de marketing, comportamiento del consumidor, investigación de mercados y análisis de datos. Esto me permitió desarrollar habilidades clave como la segmentación de mercado, la planificación estratégica, y el diseño de campañas publicitarias.",
+      "Además, tuve la oportunidad de colaborar en diferentes proyectos y trabajos en grupo, lo que fortaleció mis habilidades interpersonales, de liderazgo y trabajo en equipo. También participé en estudios de caso reales y en simulaciones de proyectos de marketing, donde pude aplicar los conocimientos teóricos en contextos prácticos, enriqueciendo mi capacidad para adaptarme a entornos profesionales dinámicos.",
+      "Este grado me proporcionó una visión global del marketing moderno y las herramientas necesarias para implementar estrategias exitosas en el entorno empresarial actual."
+    ]
+  }
+]
