@@ -9,17 +9,17 @@
   gsap.registerPlugin(ScrollTrigger, SplitText);
 
   document.fonts.ready.then(function () {
-    // 1. Split-text char reveal for every heading
+    // 1. Split-text word reveal for every heading
     document.querySelectorAll("h1.brxe-heading, h2.brxe-heading, h3.brxe-heading").forEach(function (heading) {
-      var split = new SplitText(heading, { type: "chars,words", charsClass: "char" });
-      gsap.set(split.chars, { opacity: 0, yPercent: 110, rotateZ: 4 });
-      gsap.to(split.chars, {
+      var split = new SplitText(heading, { type: "words", wordsClass: "word" });
+      gsap.set(split.words, { opacity: 0, yPercent: 110, rotateZ: 4 });
+      gsap.to(split.words, {
         opacity: 1,
         yPercent: 0,
         rotateZ: 0,
         duration: 0.7,
         ease: "power3.out",
-        stagger: 0.018,
+        stagger: 0.045,
         scrollTrigger: {
           trigger: heading,
           start: "top 88%",
@@ -109,14 +109,14 @@
     // 6. Header + hero entrance on load
     gsap.from("#brx-header", { opacity: 0, y: -24, duration: 0.7, ease: "power2.out", clearProps: "transform" });
 
-    // 7. Section labels ("00 // USER_PROFILE" etc.) - letter-by-letter typing feel
+    // 7. Section labels ("00 // USER_PROFILE" etc.) - word-by-word typing feel
     document.querySelectorAll(".label.text-blue.brxe-text-basic:not(.label-holo)").forEach(function (label) {
-      var split = new SplitText(label, { type: "chars", charsClass: "char" });
-      gsap.set(split.chars, { opacity: 0 });
-      gsap.to(split.chars, {
+      var split = new SplitText(label, { type: "words", wordsClass: "word" });
+      gsap.set(split.words, { opacity: 0 });
+      gsap.to(split.words, {
         opacity: 1,
-        duration: 0.02,
-        stagger: 0.02,
+        duration: 0.05,
+        stagger: 0.05,
         ease: "none",
         scrollTrigger: {
           trigger: label,
