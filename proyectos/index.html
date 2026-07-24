@@ -104,6 +104,19 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <meta property="og:title" content="Portfolio">
 <meta property="og:type" content="website">
 <style>
+.home-preview-list{display:flex;flex-direction:column;gap:24px}
+.study-card,.job-card{display:grid;grid-template-columns:260px 1fr;gap:32px;padding:32px}
+@media (max-width:767px){.study-card,.job-card{grid-template-columns:1fr}}
+.study-card-image,.job-card-image{aspect-ratio:4/3;overflow:hidden;border-radius:16px;background:var(--bricks-color-dhx017);display:flex;align-items:center;justify-content:center;padding:16px}
+.study-card-image img,.job-card-image img{width:100%;height:100%;object-fit:contain;display:block}
+.job-card-image{background:#f4f4f2;padding:24px}
+.job-card-image.placeholder{background:transparent;background-image:linear-gradient(-45deg,#010101,#131313);border:2px solid var(--bricks-border-color);padding:0}
+.study-card-header,.job-card-header{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;align-items:baseline}
+.study-card-body,.job-card-body{display:flex;flex-direction:column;gap:12px}
+.study-card-desc,.job-card-desc{display:flex;flex-direction:column;gap:12px}
+.job-card-funciones{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+</style>
+<style>
 .page-hero{display:flex;flex-direction:column;gap:16px;max-width:760px;margin-bottom:40px}
 .page-hero .back-link{display:inline-flex;align-items:center;gap:6px;width:max-content}
 .proyectos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
@@ -165,6 +178,14 @@ document.querySelectorAll('#brxe-vzunlc a, #brxe-uklerk').forEach(function(link)
 </div>
 <div class="proyectos-grid">
 <div class="brxe-block terminal grow-hover project-card">
+<div class="project-card-image background-glow"><img src="/assets/projects/ClientPortal.png" alt="Panel de agencia del Web Client Portal, con los sitios que necesitan atención" loading="lazy"></div>
+<div class="project-card-body">
+<h3 class="brxe-heading">Web Client Portal — Panel de Agencia</h3>
+<div class="project-card-stack"><p class="brxe-text-basic badge-infraestructure">Next.js</p><p class="brxe-text-basic badge-infraestructure">TypeScript</p><p class="brxe-text-basic badge-infraestructure">Prisma</p><p class="brxe-text-basic badge-infraestructure">PostgreSQL</p><p class="brxe-text-basic badge-infraestructure">Stripe</p></div>
+<p class="brxe-text-basic">Portal para agencias WordPress: cada cliente ve el estado real de su sitio, sus facturas y las paga online con Stripe; la agencia gestiona todo desde un panel de "mission control" que avisa solo cuando algo empeora de verdad. Construido con Next.js 16, TypeScript, Prisma y PostgreSQL, con cola de emails con reintento, tests automatizados (Vitest + Playwright) y CI en GitHub Actions.</p>
+<a class="brxe-text-link label text-blue underline" href="https://dhx101-web-client-portal.vercel.app" target="_blank" rel="noopener noreferrer"><span class="icon"><i class="ion-ios-arrow-round-forward"></i></span><span class="text">Visita la web</span></a>
+</div>
+</div><div class="brxe-block terminal grow-hover project-card">
 <div class="project-card-image background-glow"><img src="/assets/projects/Makisu.png" alt="Makisu Sushi Petrer Buffet Libre" loading="lazy"></div>
 <div class="project-card-body">
 <h3 class="brxe-heading">Makisu Sushi Petrer</h3>

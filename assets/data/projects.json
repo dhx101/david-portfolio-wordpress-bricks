@@ -1,5 +1,19 @@
 [
   {
+    "name": "Web Client Portal — Panel de Agencia",
+    "img": "ClientPortal.png",
+    "alt": "Panel de agencia del Web Client Portal, con los sitios que necesitan atención",
+    "stack": [
+      "Next.js",
+      "TypeScript",
+      "Prisma",
+      "PostgreSQL",
+      "Stripe"
+    ],
+    "miniDescription": "Portal para agencias WordPress: cada cliente ve el estado real de su sitio, sus facturas y las paga online con Stripe; la agencia gestiona todo desde un panel de \"mission control\" que avisa solo cuando algo empeora de verdad. Construido con Next.js 16, TypeScript, Prisma y PostgreSQL, con cola de emails con reintento, tests automatizados (Vitest + Playwright) y CI en GitHub Actions.",
+    "link": "https://dhx101-web-client-portal.vercel.app"
+  },
+  {
     "name": "Makisu Sushi Petrer",
     "img": "Makisu.png",
     "alt": "Makisu Sushi Petrer Buffet Libre",
