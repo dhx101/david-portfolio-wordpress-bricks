@@ -5,24 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Search Engine Optimization by Rank Math - https://rankmath.com/ -->
-<title>Por qué construí un portal de clientes para una agencia WordPress | Blog de David Huang Xie</title>
-<meta name="description" content="Cómo y por qué desarrollé un portal en Next.js para que los clientes de una agencia WordPress vean el estado de su sitio, sus facturas y las paguen online, sin depender de emails sueltos ni hojas de cálculo.">
+<title>Qué es un registro de auditoría y por qué toda herramienta interna debería tener uno | Blog de David Huang Xie</title>
+<meta name="description" content="Qué es un registro de auditoría (audit log), por qué debe ser best-effort y no transaccional, y cómo lo implementé en un panel de administración interno.">
 <meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
-<link rel="canonical" href="/blog/portal-de-clientes-para-agencia-wordpress/">
+<link rel="canonical" href="/blog/que-es-un-registro-de-auditoria/">
 <link rel="icon" href="/assets/icons/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
 <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
 <meta property="og:locale" content="es_ES">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Por qué construí un portal de clientes para una agencia WordPress | Blog de David Huang Xie">
-<meta property="og:description" content="Cómo y por qué desarrollé un portal en Next.js para que los clientes de una agencia WordPress vean el estado de su sitio, sus facturas y las paguen online, sin depender de emails sueltos ni hojas de cálculo.">
-<meta property="og:url" content="/blog/portal-de-clientes-para-agencia-wordpress/">
+<meta property="og:title" content="Qué es un registro de auditoría y por qué toda herramienta interna debería tener uno | Blog de David Huang Xie">
+<meta property="og:description" content="Qué es un registro de auditoría (audit log), por qué debe ser best-effort y no transaccional, y cómo lo implementé en un panel de administración interno.">
+<meta property="og:url" content="/blog/que-es-un-registro-de-auditoria/">
 <meta property="og:site_name" content="Portfolio David Huang Xie">
 <meta property="og:updated_time" content="2026-07-08T17:54:06+00:00">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Por qué construí un portal de clientes para una agencia WordPress | Blog de David Huang Xie">
-<meta name="twitter:description" content="Cómo y por qué desarrollé un portal en Next.js para que los clientes de una agencia WordPress vean el estado de su sitio, sus facturas y las paguen online, sin depender de emails sueltos ni hojas de cálculo.">
+<meta name="twitter:title" content="Qué es un registro de auditoría y por qué toda herramienta interna debería tener uno | Blog de David Huang Xie">
+<meta name="twitter:description" content="Qué es un registro de auditoría (audit log), por qué debe ser best-effort y no transaccional, y cómo lo implementé en un panel de administración interno.">
 <meta name="twitter:label1" content="Written by">
 <meta name="twitter:data1" content="admin">
 <meta name="twitter:label2" content="Time to read">
@@ -103,7 +103,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <meta name="generator" content="WordPress 7.0">
 <link rel="shortlink" href="/">
 <style>body{opacity:0;}</style><script>window.addEventListener("load", function() { document.body.style.opacity = "1"; });</script><noscript><style>body{opacity:1;}</style></noscript>
-<meta property="og:url" content="/blog/portal-de-clientes-para-agencia-wordpress/">
+<meta property="og:url" content="/blog/que-es-un-registro-de-auditoria/">
 <meta property="og:site_name" content="Portfolio">
 <meta property="og:title" content="Portfolio">
 <meta property="og:type" content="website">
@@ -136,7 +136,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 .blog-post-body a{color:var(--bricks-color-dhx001)}
 .blog-post-body ul,.blog-post-body ol{padding-left:1.4em;display:flex;flex-direction:column;gap:8px}
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Por qué construí un portal de clientes para una agencia WordPress", "description": "Cómo y por qué desarrollé un portal en Next.js para que los clientes de una agencia WordPress vean el estado de su sitio, sus facturas y las paguen online, sin depender de emails sueltos ni hojas de cálculo.", "datePublished": "2026-07-24", "author": {"@type": "Person", "name": "David Huang Xie"}, "image": "https://davidhuangxie.com/assets/blog/portal-de-clientes-para-agencia-wordpress.webp"}</script><meta property="og:image" content="https://davidhuangxie.com/assets/blog/portal-de-clientes-para-agencia-wordpress.webp"><meta name="twitter:image" content="https://davidhuangxie.com/assets/blog/portal-de-clientes-para-agencia-wordpress.webp">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Qué es un registro de auditoría y por qué toda herramienta interna debería tener uno", "description": "Qué es un registro de auditoría (audit log), por qué debe ser best-effort y no transaccional, y cómo lo implementé en un panel de administración interno.", "datePublished": "2026-07-06", "author": {"@type": "Person", "name": "David Huang Xie"}, "image": "https://davidhuangxie.com/assets/blog/que-es-un-registro-de-auditoria.webp"}</script><meta property="og:image" content="https://davidhuangxie.com/assets/blog/que-es-un-registro-de-auditoria.webp"><meta name="twitter:image" content="https://davidhuangxie.com/assets/blog/que-es-un-registro-de-auditoria.webp">
 </head>
 <body class="page-template-default page wp-theme-bricks brx-body">
 <div id="dhx-lang-switcher" style="position:fixed;top:16px;right:16px;z-index:1000;display:flex;gap:6px;align-items:center;background:rgba(0,0,0,0.6);backdrop-filter:blur(6px);border:1px solid #3b494b;border-radius:100px;padding:6px 14px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.05em;"><span class="dhx-lang-opt" data-lang="es" style="cursor:pointer;">ES</span><span style="color:#3b494b;">·</span><span class="dhx-lang-opt" data-lang="en" style="cursor:pointer;">EN</span><span style="color:#3b494b;">·</span><span class="dhx-lang-opt" data-lang="zh" style="cursor:pointer;">ZH</span><span style="color:#3b494b;">·</span><span class="dhx-lang-opt" data-lang="pt" style="cursor:pointer;">PT</span></div>		<a class="skip-link" href="#brx-content">Skip to main content</a>
@@ -173,33 +173,33 @@ document.querySelectorAll('#brxe-vzunlc a, #brxe-uklerk').forEach(function(link)
 <div class="blog-post">
 <a class="brxe-button btn-secondary grow-hover bricks-button back-link" href="/blog/">&larr; Volver al blog</a>
 <div class="blog-post-header">
-<img src="/assets/blog/portal-de-clientes-para-agencia-wordpress.webp" alt="Panel de control con métricas representando un portal de clientes" loading="lazy">
-<p class="blog-date">24/07/2026</p>
-<h1 class="brxe-heading text-white">Por qué construí un portal de clientes para una agencia WordPress</h1>
+<img src="/assets/blog/que-es-un-registro-de-auditoria.webp" alt="Documentos y registros representando un log de auditoría" loading="lazy">
+<p class="blog-date">06/07/2026</p>
+<h1 class="brxe-heading text-white">Qué es un registro de auditoría y por qué toda herramienta interna debería tener uno</h1>
 </div>
 <div class="blog-post-body">
-<p>Cualquiera que gestione varios sitios WordPress para clientes conoce el problema: la información sobre cada sitio —si está caído, si tiene actualizaciones pendientes, si la factura del mes está pagada— acaba repartida entre el correo, una hoja de cálculo y la memoria de quien lleva la cuenta. Funciona mientras hay dos o tres clientes. Deja de funcionar en cuanto hay diez.</p>
-<p>Por eso construí <a href="/proyectos/">Web Client Portal</a>: un panel donde cada cliente de una agencia WordPress inicia sesión y ve el estado real de su sitio, y donde la agencia gestiona todo desde una única vista en vez de entrar sitio por sitio.</p>
-<h2>El problema concreto</h2>
-<p>Una agencia que lleva WordPress para varios clientes necesita responder, a diario, preguntas como:</p>
+<p>"¿Quién marcó esta factura como pagada?" es la típica pregunta que, sin un registro de auditoría, no tiene respuesta clara en un panel con varios administradores. Así lo resolví en el <a href="https://dhx101-web-client-portal.vercel.app">Web Client Portal</a>.</p>
+<h2>Qué es un registro de auditoría</h2>
+<p>Un audit log es una tabla que registra, para cada acción administrativa relevante, quién la hizo, qué hizo, sobre qué elemento y cuándo. No es un sistema de logs de errores (eso es otra cosa) — es un historial legible de decisiones humanas dentro de la aplicación: crear una factura, cambiar su estado, dar de baja el acceso de un cliente.</p>
+<h2>La decisión de diseño más importante: best-effort, no transaccional</h2>
+<p>El primer instinto al implementar esto sería escribir la entrada de auditoría dentro de la misma transacción que la acción real, para "garantizar" que nunca se pierde un registro. Es exactamente el error a evitar.</p>
+<p>Si escribir la entrada de auditoría formara parte de la transacción de negocio, un problema pasajero en esa escritura (una tabla bloqueada, una conexión lenta) revertiría también la acción real — por ejemplo, dejar sin efecto que una factura se marcó como pagada, solo porque su registro de auditoría no pudo escribirse a tiempo. Eso es mucho peor que simplemente no tener el registro.</p>
+<p>Por eso, el registro de auditoría se escribe <strong>después</strong> de que la acción real ya tuvo éxito, envuelto en su propio <code>try/catch</code>, sin poder revertir nada:</p>
+<pre><code>await db.invoice.update({ status: 'PAID' })
+// la factura ya está pagada en este punto, pase lo que pase después
+await logAudit({ action: 'invoice.status_changed', ... }).catch(logError)
+</code></pre>
+<p>Perder una entrada de auditoría pierde "quién lo hizo", no "qué pasó" — la factura sigue correctamente marcada como pagada de todas formas.</p>
+<h2>Qué guardar en cada entrada</h2>
 <ul>
-<li>¿Qué sitios tienen actualizaciones de WordPress, plugins o temas pendientes?</li>
-<li>¿Algún sitio ha dejado de responder?</li>
-<li>¿Qué facturas siguen sin pagar?</li>
-<li>¿Hay tickets de soporte abiertos que llevan días sin respuesta?</li>
+<li><strong>Quién:</strong> el id del actor, más un snapshot de su nombre (por si esa cuenta se elimina después, el registro sigue siendo legible).</li>
+<li><strong>Qué:</strong> una acción concreta (<code>invoice.status_changed</code>, <code>client_access.deleted</code>), no un texto libre.</li>
+<li><strong>Sobre qué:</strong> tipo y id del elemento afectado.</li>
+<li><strong>Detalle opcional:</strong> por ejemplo, el estado anterior y el nuevo — nunca datos sensibles como una clave de API, aunque la acción sea "actualizar clave de API".</li>
 </ul>
-<p>Sin una herramienta centralizada, cada una de esas preguntas exige entrar sitio por sitio, o confiar en que alguien se acuerde de mirar. Ninguna de las dos opciones escala.</p>
-<h2>Lo que construí</h2>
-<p>El portal conecta con cada WordPress a través de un plugin propio (<a href="/proyectos/">WP Admin Desk</a>) que expone un pequeño API REST: versión de núcleo, plugins y temas pendientes, y si el sitio usa WooCommerce, pedidos pendientes y stock bajo. Un cron sincroniza esos datos periódicamente, así que el panel siempre refleja el estado real, no lo que alguien recuerde.</p>
-<p>Con esos datos, la agencia tiene un panel de <strong>"sitios que necesitan atención"</strong>: no una lista de todos los sitios, sino solo los que tienen un problema real — y solo avisa por email cuando un sitio empeora de verdad, no en cada sincronización rutinaria mientras el mismo problema sigue ahí. Eso evita la fatiga de alertas que hace que la gente deje de leer los avisos.</p>
-<p>Cada cliente, por su lado, entra a su propio panel y ve el estado de su sitio, su historial de facturas, y puede <strong>pagarlas online con Stripe</strong> sin tener que escribir un email pidiendo el número de cuenta.</p>
-<h2>Decisiones técnicas que marcaron la diferencia</h2>
-<p>Dos decisiones concretas terminaron siendo las más importantes del proyecto:</p>
-<p><strong>El navegador nunca es la fuente de verdad para un pago.</strong> Una factura se marca como pagada solo cuando Stripe confirma el cobro mediante un webhook firmado — nunca en el momento en que el cliente vuelve del checkout, porque esa redirección solo demuestra que el navegador volvió, no que el pago se completó. El webhook además es idempotente: si Stripe reenvía el mismo evento, no pasa nada raro.</p>
-<p><strong>Un email fallido no puede ser un email perdido.</strong> Si el proveedor de email está caído, la notificación se queda en cola con reintento y backoff en vez de desaparecer en un log que nadie mira. Es la diferencia entre "el cliente nunca se enteró de que le llegó una factura" y "se enteró con un poco de retraso".</p>
-<h2>El resultado</h2>
-<p>El portal está desplegado y en uso — puedes <a href="https://dhx101-web-client-portal.vercel.app">probarlo tú mismo</a> con las credenciales de demostración que aparecen en la propia web. Stack: Next.js 16, TypeScript, Prisma y PostgreSQL, con Stripe para pagos, tests automatizados (Vitest + Playwright) y despliegue continuo en Vercel.</p>
-<p>Si gestionas WordPress para varios clientes y te suena el problema que describo arriba, <a href="/#brxe-vzfdra">hablemos</a>.</p>
+<h2>Conclusión</h2>
+<p>Un registro de auditoría no necesita ser complejo para ser útil. Lo que sí necesita es una decisión clara sobre su nivel de garantía: en la mayoría de aplicaciones internas, best-effort y desacoplado de la transacción real es la opción correcta.</p>
+<p>¿Tu panel interno necesita trazabilidad de quién hace qué? <a href="/#brxe-vzfdra">Contáctame</a>.</p>
 </div>
 </div>
 </div></section>

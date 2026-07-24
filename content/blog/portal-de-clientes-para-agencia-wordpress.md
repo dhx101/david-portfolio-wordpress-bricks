@@ -2,6 +2,8 @@
 title: Por qué construí un portal de clientes para una agencia WordPress
 description: Cómo y por qué desarrollé un portal en Next.js para que los clientes de una agencia WordPress vean el estado de su sitio, sus facturas y las paguen online, sin depender de emails sueltos ni hojas de cálculo.
 date: 2026-07-24
+image: /assets/blog/portal-de-clientes-para-agencia-wordpress.webp
+image_alt: Panel de control con métricas representando un portal de clientes
 ---
 
 Cualquiera que gestione varios sitios WordPress para clientes conoce el problema: la información sobre cada sitio —si está caído, si tiene actualizaciones pendientes, si la factura del mes está pagada— acaba repartida entre el correo, una hoja de cálculo y la memoria de quien lleva la cuenta. Funciona mientras hay dos o tres clientes. Deja de funcionar en cuanto hay diez.

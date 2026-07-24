@@ -17,15 +17,21 @@ from _site import ROOT, page_shell  # noqa: E402
 CONTENT_DIR = os.path.join(ROOT, "content", "blog")
 BLOG_DIR = os.path.join(ROOT, "blog")
 SITEMAP_PATH = os.path.join(ROOT, "page-sitemap.xml")
+# og:image/twitter:image need an absolute URL to resolve for external crawlers
+# (Facebook/LinkedIn/Twitter preview bots), unlike canonical links elsewhere
+# in this site which stay relative.
+BASE_URL = "https://davidhuangxie.com"
 
 PAGE_STYLE = """
 .blog-list{display:flex;flex-direction:column;gap:24px}
 .blog-list-item{padding:32px;display:flex;flex-direction:column;gap:8px}
 .blog-list-item .blog-date{font-family:"JetBrains Mono";font-size:0.85em;color:var(--bricks-color-dhx001)}
+.blog-list-item img{width:100%;max-height:260px;object-fit:cover;border-radius:8px;margin-bottom:8px}
 .blog-post{max-width:760px;display:flex;flex-direction:column;gap:24px}
 .blog-post-header{display:flex;flex-direction:column;gap:12px;margin-bottom:16px}
 .blog-post-header h1{line-height:1.25}
 .blog-post-header .blog-date{font-family:"JetBrains Mono";font-size:0.85em;color:var(--bricks-color-dhx001)}
+.blog-post-header img{width:100%;max-height:420px;object-fit:cover;border-radius:8px}
 .blog-post-body{display:flex;flex-direction:column;gap:16px;color:var(--bricks-color-dhx024);line-height:1.7}
 .blog-post-body h2{color:var(--bricks-color-dhx004);margin-top:12px}
 .blog-post-body h3{color:var(--bricks-color-dhx004)}
@@ -61,6 +67,9 @@ def parse_post(path):
     except ValueError:
         raise SystemExit(f"{path}: 'date' debe tener formato AAAA-MM-DD, no {frontmatter['date']!r}.")
 
+    if ("image" in frontmatter) != ("image_alt" in frontmatter):
+        raise SystemExit(f"{path}: 'image' e 'image_alt' deben ir juntos (falta uno de los dos).")
+
     slug = os.path.splitext(os.path.basename(path))[0]
     body_html = markdown.markdown(body_raw.strip(), extensions=["fenced_code"])
 
@@ -70,7 +79,19 @@ def parse_post(path):
         "description": frontmatter["description"],
         "date": post_date,
         "body_html": body_html,
+        "image": frontmatter.get("image"),
+        "image_alt": frontmatter.get("image_alt"),
     }
+
+
+def image_meta_tags(post):
+    if not post["image"]:
+        return ""
+    url = f"{BASE_URL}{post['image']}"
+    return (
+        f'<meta property="og:image" content="{html.escape(url)}">'
+        f'<meta name="twitter:image" content="{html.escape(url)}">'
+    )
 
 
 def json_ld_article(post):
@@ -82,6 +103,8 @@ def json_ld_article(post):
         "datePublished": post["date"].isoformat(),
         "author": {"@type": "Person", "name": "David Huang Xie"},
     }
+    if post["image"]:
+        data["image"] = f"{BASE_URL}{post['image']}"
     # json.dumps is HTML-safe enough for a script tag here (no user input, no "</script" risk
     # from our own frontmatter), but escape defensively anyway since titles are free text.
     return f'<script type="application/ld+json">{json.dumps(data, ensure_ascii=False)}</script>'
@@ -120,7 +143,12 @@ def main():
 
     list_items = []
     for post in posts:
+        thumb_html = (
+            f'<img src="{post["image"]}" alt="{html.escape(post["image_alt"])}" loading="lazy">'
+            if post["image"] else ""
+        )
         list_items.append(f"""<div class="brxe-block terminal grow-hover blog-list-item">
+{thumb_html}
 <p class="blog-date">{post['date'].strftime('%d/%m/%Y')}</p>
 <h2 class="brxe-heading"><a class="brxe-text-link" href="/blog/{post['slug']}/">{html.escape(post['title'])}</a></h2>
 <p class="brxe-text-basic">{html.escape(post['description'])}</p>
@@ -150,10 +178,15 @@ def main():
         post_dir = os.path.join(BLOG_DIR, post["slug"])
         os.makedirs(post_dir, exist_ok=True)
 
+        hero_html = (
+            f'<img src="{post["image"]}" alt="{html.escape(post["image_alt"])}" loading="lazy">'
+            if post["image"] else ""
+        )
         post_main = f"""<section class="brxe-section section"><div class="brxe-container" style="flex-direction:column">
 <div class="blog-post">
 <a class="brxe-button btn-secondary grow-hover bricks-button back-link" href="/blog/">&larr; Volver al blog</a>
 <div class="blog-post-header">
+{hero_html}
 <p class="blog-date">{post['date'].strftime('%d/%m/%Y')}</p>
 <h1 class="brxe-heading text-white">{html.escape(post['title'])}</h1>
 </div>
@@ -168,7 +201,7 @@ def main():
                 f"{post['title']} | Blog de David Huang Xie",
                 post["description"],
                 f"/blog/{post['slug']}/", "blog", post_main, PAGE_STYLE,
-                extra_head=json_ld_article(post),
+                extra_head=json_ld_article(post) + image_meta_tags(post),
             ))
 
     update_sitemap(posts)
