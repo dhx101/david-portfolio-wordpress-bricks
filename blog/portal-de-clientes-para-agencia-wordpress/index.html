@@ -5,24 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Search Engine Optimization by Rank Math - https://rankmath.com/ -->
-<title>Estudios | David Huang Xie — Desarrollador Web Full-Stack</title>
-<meta name="description" content="Trayectoria académica de David Huang Xie: Bootcamp de Desarrollo Web Full-Stack, Diseño UX, Marketing e Investigación de Mercados y Erasmus+ en Portugal.">
+<title>Por qué construí un portal de clientes para una agencia WordPress | Blog de David Huang Xie</title>
+<meta name="description" content="Cómo y por qué desarrollé un portal en Next.js para que los clientes de una agencia WordPress vean el estado de su sitio, sus facturas y las paguen online, sin depender de emails sueltos ni hojas de cálculo.">
 <meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
-<link rel="canonical" href="/estudios/">
+<link rel="canonical" href="/blog/portal-de-clientes-para-agencia-wordpress/">
 <link rel="icon" href="/assets/icons/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
 <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
 <meta property="og:locale" content="es_ES">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Estudios | David Huang Xie — Desarrollador Web Full-Stack">
-<meta property="og:description" content="Trayectoria académica de David Huang Xie: Bootcamp de Desarrollo Web Full-Stack, Diseño UX, Marketing e Investigación de Mercados y Erasmus+ en Portugal.">
-<meta property="og:url" content="/estudios/">
+<meta property="og:title" content="Por qué construí un portal de clientes para una agencia WordPress | Blog de David Huang Xie">
+<meta property="og:description" content="Cómo y por qué desarrollé un portal en Next.js para que los clientes de una agencia WordPress vean el estado de su sitio, sus facturas y las paguen online, sin depender de emails sueltos ni hojas de cálculo.">
+<meta property="og:url" content="/blog/portal-de-clientes-para-agencia-wordpress/">
 <meta property="og:site_name" content="Portfolio David Huang Xie">
 <meta property="og:updated_time" content="2026-07-08T17:54:06+00:00">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Estudios | David Huang Xie — Desarrollador Web Full-Stack">
-<meta name="twitter:description" content="Trayectoria académica de David Huang Xie: Bootcamp de Desarrollo Web Full-Stack, Diseño UX, Marketing e Investigación de Mercados y Erasmus+ en Portugal.">
+<meta name="twitter:title" content="Por qué construí un portal de clientes para una agencia WordPress | Blog de David Huang Xie">
+<meta name="twitter:description" content="Cómo y por qué desarrollé un portal en Next.js para que los clientes de una agencia WordPress vean el estado de su sitio, sus facturas y las paguen online, sin depender de emails sueltos ni hojas de cálculo.">
 <meta name="twitter:label1" content="Written by">
 <meta name="twitter:data1" content="admin">
 <meta name="twitter:label2" content="Time to read">
@@ -103,7 +103,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <meta name="generator" content="WordPress 7.0">
 <link rel="shortlink" href="/">
 <style>body{opacity:0;}</style><script>window.addEventListener("load", function() { document.body.style.opacity = "1"; });</script><noscript><style>body{opacity:1;}</style></noscript>
-<meta property="og:url" content="/estudios/">
+<meta property="og:url" content="/blog/portal-de-clientes-para-agencia-wordpress/">
 <meta property="og:site_name" content="Portfolio">
 <meta property="og:title" content="Portfolio">
 <meta property="og:type" content="website">
@@ -121,19 +121,20 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 .job-card-funciones{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
 </style>
 <style>
-.page-hero{display:flex;flex-direction:column;gap:16px;max-width:760px;margin-bottom:40px}
-.page-hero .back-link{display:inline-flex;align-items:center;gap:6px;width:max-content}
-.proyectos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-@media (max-width:1024px){.proyectos-grid{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:767px){.proyectos-grid{grid-template-columns:1fr}}
-.project-card{display:flex;flex-direction:column}
-.project-card-image{aspect-ratio:4/3;overflow:hidden;position:relative}
-.project-card-image img{width:100%;height:100%;object-fit:cover;display:block}
-.project-card-body{padding:24px;display:flex;flex-direction:column;gap:12px;flex-grow:1}
-.project-card-stack{display:flex;flex-wrap:wrap;gap:8px}
-.project-card-body>a,.project-card-body>p:last-child{margin-top:auto}
-.estudios-list,.experiencia-list{display:flex;flex-direction:column;gap:24px}
+.blog-list{display:flex;flex-direction:column;gap:24px}
+.blog-list-item{padding:32px;display:flex;flex-direction:column;gap:8px}
+.blog-list-item .blog-date{font-family:"JetBrains Mono";font-size:0.85em;color:var(--bricks-color-dhx001)}
+.blog-post{max-width:760px;display:flex;flex-direction:column;gap:24px}
+.blog-post-header{display:flex;flex-direction:column;gap:12px;margin-bottom:16px}
+.blog-post-header h1{line-height:1.25}
+.blog-post-header .blog-date{font-family:"JetBrains Mono";font-size:0.85em;color:var(--bricks-color-dhx001)}
+.blog-post-body{display:flex;flex-direction:column;gap:16px;color:var(--bricks-color-dhx024);line-height:1.7}
+.blog-post-body h2{color:var(--bricks-color-dhx004);margin-top:12px}
+.blog-post-body h3{color:var(--bricks-color-dhx004)}
+.blog-post-body a{color:var(--bricks-color-dhx001)}
+.blog-post-body ul,.blog-post-body ol{padding-left:1.4em;display:flex;flex-direction:column;gap:8px}
 </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Por qué construí un portal de clientes para una agencia WordPress", "description": "Cómo y por qué desarrollé un portal en Next.js para que los clientes de una agencia WordPress vean el estado de su sitio, sus facturas y las paguen online, sin depender de emails sueltos ni hojas de cálculo.", "datePublished": "2026-07-24", "author": {"@type": "Person", "name": "David Huang Xie"}}</script>
 </head>
 <body class="page-template-default page wp-theme-bricks brx-body">
 <div id="dhx-lang-switcher" style="position:fixed;top:16px;right:16px;z-index:1000;display:flex;gap:6px;align-items:center;background:rgba(0,0,0,0.6);backdrop-filter:blur(6px);border:1px solid #3b494b;border-radius:100px;padding:6px 14px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.05em;"><span class="dhx-lang-opt" data-lang="es" style="cursor:pointer;">ES</span><span style="color:#3b494b;">·</span><span class="dhx-lang-opt" data-lang="en" style="cursor:pointer;">EN</span><span style="color:#3b494b;">·</span><span class="dhx-lang-opt" data-lang="zh" style="cursor:pointer;">ZH</span><span style="color:#3b494b;">·</span><span class="dhx-lang-opt" data-lang="pt" style="cursor:pointer;">PT</span></div>		<a class="skip-link" href="#brx-content">Skip to main content</a>
@@ -167,53 +168,35 @@ document.querySelectorAll('#brxe-vzunlc a, #brxe-uklerk').forEach(function(link)
 });</script></div></header>
 <main id="brx-content">
 <section class="brxe-section section"><div class="brxe-container" style="flex-direction:column">
-<div class="page-hero">
-<p class="brxe-text-basic label text-blue">// ACADEMIC_LOG</p>
-<h1 class="brxe-heading text-white">Estudios</h1>
-<p class="brxe-text-basic">Mi trayectoria académica: estudios universitarios, un Erasmus+ en Portugal y los cursos y bootcamps que he realizado a lo largo de mi carrera para especializarme en desarrollo web.</p>
-<a class="brxe-button btn-secondary grow-hover bricks-button back-link" href="/">&larr; Volver al inicio</a>
+<div class="blog-post">
+<a class="brxe-button btn-secondary grow-hover bricks-button back-link" href="/blog/">&larr; Volver al blog</a>
+<div class="blog-post-header">
+<p class="blog-date">24/07/2026</p>
+<h1 class="brxe-heading text-white">Por qué construí un portal de clientes para una agencia WordPress</h1>
 </div>
-<div class="estudios-list">
-<div class="brxe-block terminal grow-hover study-card">
-<div class="study-card-image background-glow"><img src="/assets/studies/Upgrade.webp" alt="Bootcamp Desarrollo Web Full Stack" loading="lazy"></div>
-<div class="study-card-body">
-<div class="study-card-header">
-<h2 class="brxe-heading">Bootcamp Desarrollo Web Full Stack</h2>
-<p class="brxe-text-basic badge-primary">2023 - 2024</p>
-</div>
-<p class="brxe-text-basic label text-blue">Upgrade Hub</p>
-<div class="study-card-desc"><p class="brxe-text-basic">Este Bootcamp de Desarrollo Web Full Stack en Upgrade Hub me permitió adquirir un conocimiento sólido y práctico de una amplia gama de tecnologías y herramientas utilizadas en el desarrollo web. A nivel de Front-End, me especialicé en el uso de HTML, CSS y JavaScript, trabajando con frameworks como React y Angular para crear interfaces de usuario dinámicas y eficientes. En cuanto al Back-End, aprendí a gestionar servidores y bases de datos, utilizando tecnologías como Node.js, MySQL y MongoDB, además de trabajar con lenguajes como PHP para desarrollar aplicaciones robustas.</p><p class="brxe-text-basic">Durante el curso, realicé varios proyectos grupales que me brindaron la oportunidad de aplicar lo aprendido en entornos colaborativos. Estos trabajos en equipo no solo me ayudaron a perfeccionar mis habilidades técnicas, sino también a entender la importancia de la comunicación y la coordinación en equipos multidisciplinarios. Al colaborar con mis compañeros, aprendí a aprovechar los puntos fuertes de cada miembro para lograr resultados más efectivos y desarrollar soluciones eficientes a problemas complejos.</p><p class="brxe-text-basic">Gracias a esta formación intensiva, ahora me siento preparado para enfrentar los desafíos del desarrollo web moderno, tanto en Front-End como en Back-End, y estoy entusiasmado por seguir creciendo como desarrollador en futuros proyectos.</p></div>
-</div>
-</div><div class="brxe-block terminal grow-hover study-card">
-<div class="study-card-image background-glow"><img src="/assets/studies/CENEC.webp" alt="Curso Diseño UX" loading="lazy"></div>
-<div class="study-card-body">
-<div class="study-card-header">
-<h2 class="brxe-heading">Curso Diseño UX</h2>
-<p class="brxe-text-basic badge-primary">2023 - 2023</p>
-</div>
-<p class="brxe-text-basic label text-blue">CENEC Málaga</p>
-<div class="study-card-desc"><p class="brxe-text-basic">Este curso de Diseño UX en CENEC Málaga me proporcionó un conocimiento profundo y práctico de los principios clave del diseño centrado en el usuario. A lo largo del programa, aprendí a diseñar experiencias de usuario intuitivas y atractivas, con un enfoque en la investigación de usuarios, la creación de wireframes, prototipos interactivos y la realización de pruebas de usabilidad.</p><p class="brxe-text-basic">Durante el curso, participé en varios proyectos colaborativos que me permitieron aplicar los conceptos de UX en entornos de trabajo reales. En estos proyectos, perfeccioné mis habilidades para realizar entrevistas con usuarios, definir user personas y crear flujos de interacción eficientes. Además, el trabajo en equipo me ayudó a comprender la importancia de la retroalimentación continua y la colaboración efectiva con otros diseñadores y desarrolladores para lograr un diseño centrado en el usuario.</p><p class="brxe-text-basic">Gracias a esta formación intensiva en CENEC Málaga, ahora estoy preparado para enfrentar los desafíos del diseño UX. Estoy motivado para seguir creciendo en este campo, creando productos digitales que no solo sean visualmente atractivos, sino también altamente funcionales y accesibles para los usuarios.</p></div>
-</div>
-</div><div class="brxe-block terminal grow-hover study-card">
-<div class="study-card-image background-glow"><img src="/assets/studies/ISCAP.jpg" alt="Licenciatura em Comunicação Empresarial - Erasmus+" loading="lazy"></div>
-<div class="study-card-body">
-<div class="study-card-header">
-<h2 class="brxe-heading">Licenciatura em Comunicação Empresarial - Erasmus+</h2>
-<p class="brxe-text-basic badge-primary">2021 - 2022</p>
-</div>
-<p class="brxe-text-basic label text-blue">Instituto Superior de Contabilidade e Administração do Porto (ISCAP)</p>
-<div class="study-card-desc"><p class="brxe-text-basic">Durante mi experiencia Erasmus+ en el Instituto Superior de Contabilidade e Administração do Porto (ISCAP), cursé un doble grado en Marketing e Investigación de Mercados y Comunicação Empresarial. Este año en Portugal fue clave para mi desarrollo académico y personal, ya que no solo consolidé mis conocimientos en áreas fundamentales de la comunicación empresarial y el marketing, sino que también mejoré significativamente mi dominio del inglés y adquirí un nivel básico de portugués.</p><p class="brxe-text-basic">A lo largo de mi estancia, trabajé en numerosos proyectos colaborativos que fortalecieron mis capacidades de trabajo en equipo y liderazgo. En algunos casos, lideré grupos en actividades académicas, gestionando tanto la organización como la ejecución de tareas, lo que me permitió afinar mi habilidad para coordinar equipos multiculturales y adaptarme a diferentes estilos de trabajo.</p><p class="brxe-text-basic">Además de las clases, participé en diversas actividades extracurriculares, incluyendo un voluntariado con animales. Esta experiencia me ayudó a desarrollar una mayor sensibilidad hacia la colaboración en entornos diversos, y sin duda será un activo valioso en mi futuro profesional, especialmente al trabajar en equipos internacionales.</p></div>
-</div>
-</div><div class="brxe-block terminal grow-hover study-card">
-<div class="study-card-image background-glow"><img src="/assets/studies/UMA.webp" alt="Grado Marketing e Investigación de Mercados" loading="lazy"></div>
-<div class="study-card-body">
-<div class="study-card-header">
-<h2 class="brxe-heading">Grado Marketing e Investigación de Mercados</h2>
-<p class="brxe-text-basic badge-primary">2018 - 2023</p>
-</div>
-<p class="brxe-text-basic label text-blue">Universidad de Málaga</p>
-<div class="study-card-desc"><p class="brxe-text-basic">Durante mi Grado en Marketing e Investigación de Mercados en la Universidad de Málaga, adquirí una formación integral en diversas áreas del marketing, con un enfoque especial en el Marketing Digital. A lo largo de estos años, profundicé en el estudio de estrategias de marketing, comportamiento del consumidor, investigación de mercados y análisis de datos. Esto me permitió desarrollar habilidades clave como la segmentación de mercado, la planificación estratégica, y el diseño de campañas publicitarias.</p><p class="brxe-text-basic">Además, tuve la oportunidad de colaborar en diferentes proyectos y trabajos en grupo, lo que fortaleció mis habilidades interpersonales, de liderazgo y trabajo en equipo. También participé en estudios de caso reales y en simulaciones de proyectos de marketing, donde pude aplicar los conocimientos teóricos en contextos prácticos, enriqueciendo mi capacidad para adaptarme a entornos profesionales dinámicos.</p><p class="brxe-text-basic">Este grado me proporcionó una visión global del marketing moderno y las herramientas necesarias para implementar estrategias exitosas en el entorno empresarial actual.</p></div>
-</div>
+<div class="blog-post-body">
+<p>Cualquiera que gestione varios sitios WordPress para clientes conoce el problema: la información sobre cada sitio —si está caído, si tiene actualizaciones pendientes, si la factura del mes está pagada— acaba repartida entre el correo, una hoja de cálculo y la memoria de quien lleva la cuenta. Funciona mientras hay dos o tres clientes. Deja de funcionar en cuanto hay diez.</p>
+<p>Por eso construí <a href="/proyectos/">Web Client Portal</a>: un panel donde cada cliente de una agencia WordPress inicia sesión y ve el estado real de su sitio, y donde la agencia gestiona todo desde una única vista en vez de entrar sitio por sitio.</p>
+<h2>El problema concreto</h2>
+<p>Una agencia que lleva WordPress para varios clientes necesita responder, a diario, preguntas como:</p>
+<ul>
+<li>¿Qué sitios tienen actualizaciones de WordPress, plugins o temas pendientes?</li>
+<li>¿Algún sitio ha dejado de responder?</li>
+<li>¿Qué facturas siguen sin pagar?</li>
+<li>¿Hay tickets de soporte abiertos que llevan días sin respuesta?</li>
+</ul>
+<p>Sin una herramienta centralizada, cada una de esas preguntas exige entrar sitio por sitio, o confiar en que alguien se acuerde de mirar. Ninguna de las dos opciones escala.</p>
+<h2>Lo que construí</h2>
+<p>El portal conecta con cada WordPress a través de un plugin propio (<a href="/proyectos/">WP Admin Desk</a>) que expone un pequeño API REST: versión de núcleo, plugins y temas pendientes, y si el sitio usa WooCommerce, pedidos pendientes y stock bajo. Un cron sincroniza esos datos periódicamente, así que el panel siempre refleja el estado real, no lo que alguien recuerde.</p>
+<p>Con esos datos, la agencia tiene un panel de <strong>"sitios que necesitan atención"</strong>: no una lista de todos los sitios, sino solo los que tienen un problema real — y solo avisa por email cuando un sitio empeora de verdad, no en cada sincronización rutinaria mientras el mismo problema sigue ahí. Eso evita la fatiga de alertas que hace que la gente deje de leer los avisos.</p>
+<p>Cada cliente, por su lado, entra a su propio panel y ve el estado de su sitio, su historial de facturas, y puede <strong>pagarlas online con Stripe</strong> sin tener que escribir un email pidiendo el número de cuenta.</p>
+<h2>Decisiones técnicas que marcaron la diferencia</h2>
+<p>Dos decisiones concretas terminaron siendo las más importantes del proyecto:</p>
+<p><strong>El navegador nunca es la fuente de verdad para un pago.</strong> Una factura se marca como pagada solo cuando Stripe confirma el cobro mediante un webhook firmado — nunca en el momento en que el cliente vuelve del checkout, porque esa redirección solo demuestra que el navegador volvió, no que el pago se completó. El webhook además es idempotente: si Stripe reenvía el mismo evento, no pasa nada raro.</p>
+<p><strong>Un email fallido no puede ser un email perdido.</strong> Si el proveedor de email está caído, la notificación se queda en cola con reintento y backoff en vez de desaparecer en un log que nadie mira. Es la diferencia entre "el cliente nunca se enteró de que le llegó una factura" y "se enteró con un poco de retraso".</p>
+<h2>El resultado</h2>
+<p>El portal está desplegado y en uso — puedes <a href="https://dhx101-web-client-portal.vercel.app">probarlo tú mismo</a> con las credenciales de demostración que aparecen en la propia web. Stack: Next.js 16, TypeScript, Prisma y PostgreSQL, con Stripe para pagos, tests automatizados (Vitest + Playwright) y despliegue continuo en Vercel.</p>
+<p>Si gestionas WordPress para varios clientes y te suena el problema que describo arriba, <a href="/#brxe-vzfdra">hablemos</a>.</p>
 </div>
 </div>
 </div></section>
